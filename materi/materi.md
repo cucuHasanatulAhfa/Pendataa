@@ -1,9 +1,4 @@
----
-title: pendata
-
----
-
-- Macam-Macam Data dalam Data Mining
+# Macam-Macam Data dalam Data Mining #
 
 Dalam bidang data mining dan analisis data, terdapat berbagai jenis data yang memiliki karakteristik berbeda. Setiap jenis data biasanya membutuhkan metode dan teknik pengolahan yang berbeda pula. Secara umum, data dapat diklasifikasikan menjadi:
 
