@@ -5,5 +5,5 @@ format: jb-book
 root: intro
 chapters:
 - file: materi
-- file: pendat
-- file: pendat_Tugas_2
+- file: Mengukur_jarak_data_campuran
+- file: Mengukur_jarak_iris
