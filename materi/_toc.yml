@@ -1,9 +1,6 @@
 format: jb-book
 root: intro
-
 chapters:
-  - file: materi/materi
-    sections:
-      - file: materi/Mengukur_jarak_data_campuran
-      - file: materi/Mengukur_jarak_iris
-      - file: materi/pendat
+- file: Mengukur_jarak_data_campuran
+- file: Mengukur_jarak_iris
+- file: pendat

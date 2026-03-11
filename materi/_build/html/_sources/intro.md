@@ -1,6 +1,5 @@
 # Selamat Datang di Penambangan Data
 
-![Foto](image.png)
 
 Selamat Belajar!!!
 
