@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Selamat Datang di Penambangan Data &#8212; Penambangan Data</title>
+    <title>Preprocessing &#8212; Penambangan Data</title>
   
   
   
@@ -62,10 +62,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'PreProcessing';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Mengukur Jarak Campuran" href="Mengukur_jarak_data_campuran.html" />
+    <link rel="prev" title="Missing Value Imputation Menggunakan WKNN" href="Missing_Value_Imputation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -128,8 +130,6 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -148,7 +148,7 @@ const thebe_selector_output = ".output, .cell_output"
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -168,13 +168,13 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Selamat Datang di Penambangan Data
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Mengukur_jarak_data_campuran.html">Mengukur Jarak Campuran</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Mengukur_jarak_iris.html">Mengukur Jarak Dataset Iris</a></li>
 
@@ -187,7 +187,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="PreProcessing.html">Preprocessing</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Preprocessing</a></li>
 
 
 
@@ -265,7 +265,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/cucuhasanatulahfa/Pendataa/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/cucuhasanatulahfa/Pendataa/issues/new?title=Issue%20on%20page%20%2FPreProcessing.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -295,7 +295,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/PreProcessing.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -305,7 +305,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -366,7 +366,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -377,11 +379,26 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Selamat Datang di Penambangan Data</h1>
+    <h1>Preprocessing</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Preprocessing</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tahapan-preprocessing-data">2. Tahapan Preprocessing Data.</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-data">3. Normalisasi Data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#min-max-normalization">3.1 Min-Max Normalization</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#z-score-normalization">3.2 Z-Score Normalization</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#decimal-scaling-normalization">3.3 Decimal Scaling Normalization</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">4. Kesimpulan</a></li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -391,21 +408,168 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="selamat-datang-di-penambangan-data">
-<h1>Selamat Datang di Penambangan Data<a class="headerlink" href="#selamat-datang-di-penambangan-data" title="Permalink to this heading">#</a></h1>
-<p>Selamat Belajar!!!</p>
-<p>Nama : Cucu Hasanatul Ahfa</p>
-<p>NIM : 240411100126</p>
-<p>Website ini berisi materi pembelajaran Penambangan Data yang meliputi:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="preprocessing">
+<h1>Preprocessing<a class="headerlink" href="#preprocessing" title="Permalink to this heading">#</a></h1>
+<p><strong>1. Pengertian Preprocessing</strong></p>
+<p>Preprocessing data adalah tahap awal dalam proses data mining atau machine learning yang dilakukan untuk mempersiapkan data sebelum dianalisis lebih lanjut.</p>
+<p>Data yang diperoleh dari berbagai sumber biasanya masih berupa data mentah yang belum siap digunakan secara langsung. Dalam data tersebut sering ditemukan beberapa permasalahan seperti:</p>
 <ul class="simple">
-<li><p>Mengukur Jarak Data Campuran</p></li>
-<li><p>Mengukur Jarak Data Iris</p></li>
-<li><p>Analisis Data Penambangan</p></li>
-<li><p>Missing Value Imputation</p></li>
-<li><p>PreProcessing</p></li>
+<li><p>Data yang hilang (missing value)</p></li>
+<li><p>Data tidak konsisten</p></li>
+<li><p>Skala data yang berbeda antar atribut</p></li>
+<li><p>Data yang mengandung kesalahan atau noise</p></li>
 </ul>
-<div class="toctree-wrapper compound">
+<p>Oleh karena itu, preprocessing dilakukan untuk membersihkan dan menyiapkan data agar lebih terstruktur sehingga proses analisis dapat berjalan dengan lebih baik dan menghasilkan model yang lebih akurat.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="tahapan-preprocessing-data">
+<h1>2. Tahapan Preprocessing Data.<a class="headerlink" href="#tahapan-preprocessing-data" title="Permalink to this heading">#</a></h1>
+<p>Dalam proses preprocessing terdapat beberapa tahapan yang umum dilakukan, yaitu:</p>
+<p><strong>1. Data Cleaning</strong></p>
+<p>Tahap ini bertujuan untuk membersihkan data dari kesalahan, nilai yang tidak valid, atau data yang hilang.</p>
+<p><strong>2. Data Integration</strong></p>
+<p>Proses penggabungan data yang berasal dari beberapa sumber sehingga menjadi satu dataset yang lengkap.</p>
+<p><strong>3. Data Transformation</strong></p>
+<p>Tahap mengubah bentuk atau format data agar sesuai dengan kebutuhan analisis.</p>
+<p><strong>4. Data Normalization</strong></p>
+<p>Proses mengubah nilai data ke dalam skala yang sama sehingga tidak ada atribut yang memiliki pengaruh lebih besar hanya karena nilainya lebih besar.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="normalisasi-data">
+<h1>3. Normalisasi Data<a class="headerlink" href="#normalisasi-data" title="Permalink to this heading">#</a></h1>
+<p>Normalisasi data merupakan proses mengubah nilai suatu atribut ke dalam skala tertentu tanpa mengubah hubungan antar data tersebut.</p>
+<p>Tujuan dari normalisasi data antara lain:</p>
+<ul class="simple">
+<li><p>Menyamakan rentang nilai antar atribut</p></li>
+<li><p>Menghindari dominasi nilai yang besar</p></li>
+<li><p>Mempermudah proses perhitungan pada algoritma machine learning seperti KNN, WKNN, dan clustering</p></li>
+</ul>
+<p>Beberapa metode normalisasi yang sering digunakan yaitu:</p>
+<ul class="simple">
+<li><p>Min-Max Normalization</p></li>
+<li><p>Z-Score Normalization</p></li>
+<li><p>Decimal Scaling Normalization</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="min-max-normalization">
+<h1>3.1 Min-Max Normalization<a class="headerlink" href="#min-max-normalization" title="Permalink to this heading">#</a></h1>
+<p>Min-Max Normalization adalah metode normalisasi yang mengubah nilai data ke dalam rentang 0 sampai 1.</p>
+<p>Rumus Min-Max:</p>
+<div class="math notranslate nohighlight">
+\[
+X_{norm} = \frac{X - X_{min}}{X_{max} - X_{min}}
+\]</div>
+<p>Keterangan:</p>
+<p>X = nilai data asli</p>
+<p>Xmin = nilai terkecil pada data</p>
+<p>Xmax = nilai terbesar pada data</p>
+<p>Xnorm = nilai hasil normalisasi</p>
+<p>Perhitungan</p>
+<p>Terdapat data IPK dari dataset pada tabel:</p>
+<p>2, 3, 4</p>
+<p>Nilai minimum = 2
+Nilai maksimum = 4</p>
+<p>Jika ingin menormalisasi nilai 3:</p>
+<p>(3 - 2)/(4 - 2) = 0.5</p>
+<p>Hasil normalisasi:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Nilai Asli</p></th>
+<th class="head"><p>Hasil Normalisasi</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>0.5</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
 </div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="z-score-normalization">
+<h1>3.2 Z-Score Normalization<a class="headerlink" href="#z-score-normalization" title="Permalink to this heading">#</a></h1>
+<p>Z-Score Normalization adalah metode normalisasi yang menggunakan nilai rata-rata (mean) dan standar deviasi untuk mengubah data ke dalam bentuk distribusi standar.</p>
+<p>Rumus Z-Score:</p>
+<div class="math notranslate nohighlight">
+\[
+Z = \frac{X - \mu}{\sigma}
+\]</div>
+<p>Keterangan:</p>
+<p>X = nilai data</p>
+<p>μ = rata-rata data</p>
+<p>σ = standar deviasi</p>
+<p>Z = nilai normalisasi</p>
+<p>Perhitungan</p>
+<p>Data IPK:</p>
+<p>2, 3, 4</p>
+<p>Mean:</p>
+<p>(2 + 3 + 4) /3=3</p>
+<p>Standar deviasi dihitung dari selisih tiap data dengan rata-rata.</p>
+<p>Jika ingin menormalisasi nilai 3:</p>
+<div class="math notranslate nohighlight">
+\[
+Z = \frac{3 - 3}{\sigma} = 0
+\]</div>
+<p>Artinya nilai tersebut berada tepat pada rata-rata data.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="decimal-scaling-normalization">
+<h1>3.3 Decimal Scaling Normalization<a class="headerlink" href="#decimal-scaling-normalization" title="Permalink to this heading">#</a></h1>
+<p>Decimal Scaling Normalization dilakukan dengan cara membagi nilai data dengan pangkat 10 berdasarkan jumlah digit terbesar pada data.</p>
+<p>Rumus:</p>
+<div class="math notranslate nohighlight">
+\[
+X_{norm} = 10X
+\]</div>
+<p>Keterangan:</p>
+<p>X = nilai data</p>
+<p>j = jumlah digit terbesar pada data</p>
+<p><strong>Perhitungan</strong></p>
+<p>Data PO pada tabel:</p>
+<p>200000</p>
+<p>300000</p>
+<p>400000</p>
+<p>Nilai terbesar = 400000</p>
+<p>Jumlah digit = 6</p>
+<p>Maka normalisasi dilakukan dengan membagi 10⁶.</p>
+<p>Contoh:</p>
+<p>200000 / 1000000 = 0.2</p>
+<p>300000 / 1000000 = 0.3</p>
+<p>400000 / 1000000 = 0.4</p>
+<p>Hasil normalisasi:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Nilai Asli</p></th>
+<th class="head"><p>Hasil Normalisasi</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>200000</p></td>
+<td><p>0.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>300000</p></td>
+<td><p>0.3</p></td>
+</tr>
+<tr class="row-even"><td><p>400000</p></td>
+<td><p>0.4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="kesimpulan">
+<h1>4. Kesimpulan<a class="headerlink" href="#kesimpulan" title="Permalink to this heading">#</a></h1>
+<p>Preprocessing data merupakan tahap penting dalam pengolahan data sebelum dilakukan analisis atau pemodelan machine learning. Salah satu proses penting dalam preprocessing adalah normalisasi data yang bertujuan untuk menyamakan skala antar atribut.</p>
+<p>Beberapa metode normalisasi yang sering digunakan antara lain:</p>
+<ul class="simple">
+<li><p>Min-Max Normalization untuk mengubah data ke rentang 0 sampai 1</p></li>
+<li><p>Z-Score Normalization menggunakan nilai rata-rata dan standar deviasi</p></li>
+<li><p>Decimal Scaling Normalization dengan membagi data menggunakan pangkat 10</p></li>
+</ul>
+<p>Dengan melakukan normalisasi, proses analisis data menjadi lebih stabil dan hasil perhitungan algoritma menjadi lebih akurat.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -438,14 +602,14 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="right-next"
-       href="Mengukur_jarak_data_campuran.html"
-       title="next page">
+    <a class="left-prev"
+       href="Missing_Value_Imputation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Mengukur Jarak Campuran</p>
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Missing Value Imputation Menggunakan WKNN</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -453,6 +617,28 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Preprocessing</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tahapan-preprocessing-data">2. Tahapan Preprocessing Data.</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-data">3. Normalisasi Data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#min-max-normalization">3.1 Min-Max Normalization</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#z-score-normalization">3.2 Z-Score Normalization</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#decimal-scaling-normalization">3.3 Decimal Scaling Normalization</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">4. Kesimpulan</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
