@@ -4,3 +4,5 @@ chapters:
 - file: Mengukur_jarak_data_campuran
 - file: Mengukur_jarak_iris
 - file: pendat
+- file: Missing_Value_Imputation
+- file: PreProcessing
