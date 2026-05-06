@@ -1,11 +1,11 @@
 format: jb-book
 root: intro
 chapters:
-- file: Mengukur_jarak_data_campuran
-- file: Mengukur_jarak_iris
-- file: pendat
-- file: Missing_Value_Imputation
-- file: PreProcessing
-- file: jawaban_UTS_pendat
-- file: Analisis_Data_Naive_Bayes
-- file: pohon_keputusan  
+- file: Mengukur_jarak_data_campuran.ipynb
+- file: Mengukur_jarak_iris.ipynb
+- file: pendat.ipynb
+- file: Missing_Value_Imputation.ipynb
+- file: PreProcessing.ipynb
+- file: jawaban_UTS_pendat.ipynb
+- file: Analisis_Data_Naive_Bayes.ipynb
+- file: pohon_keputusan .ipynb
