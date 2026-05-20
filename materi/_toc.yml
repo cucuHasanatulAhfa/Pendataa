@@ -10,3 +10,4 @@ chapters:
 - file: Analisis_Data_Naive_Bayes.ipynb
 - file: pohon_keputusan .ipynb
 - file: Random_Forest.ipynb
+- file: Analisis_Data_Menggunakan_Regresi_Linier.ipynb
